@@ -28,4 +28,8 @@ RUN apk --no-cache add curl ca-certificates openjdk17-jre && \
 # Downloading CMD Runner
 RUN /jmeter-plugin-install.sh
 
+#Check the plugins installed
+RUN  cd ${JMETER_HOME}/bin
+./PluginsManagerCMD.sh status
+
 ENTRYPOINT [ "/entrypoint.sh" ]
