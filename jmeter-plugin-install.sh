@@ -16,7 +16,9 @@ echo "Test Treesa done Download Plugin Manager"
 # List files in path
 echo "files in path"
 search_dir="${JMETER_HOME}/lib"
-find "$search_dir" -type f
+for entry in "$search_dir"/*; do
+    echo "$entry"
+done
 echo "files in path completed"
 
 # Test Treesa Install Plugin Manager
