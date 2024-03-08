@@ -6,12 +6,18 @@
 # Download CMDRunner
 echo "Downloading CMDRunner"
 curl -L http://search.maven.org/remotecontent?filepath=kg/apc/cmdrunner/${JMETER_CMD_RUNNER_VERSION}/cmdrunner-${JMETER_CMD_RUNNER_VERSION}.jar --output ${JMETER_HOME}/lib/cmdrunner-${JMETER_CMD_RUNNER_VERSION}.jar
-# Treesa done download CMDRunner
+echo "Treesa done download CMDRunner"
 
 # Download Plugin Manager
 echo "Downloading Plugin Manager"
 curl -L https://jmeter-plugins.org/get/ --output ${JMETER_HOME}/lib/ext/jmeter-plugins-manager-${JMETER_PLUGIN_MANAGER_VERSION}.jar
-# Test Treesa done Download Plugin Manager
+echo "Test Treesa done Download Plugin Manager"
+
+# List files in path
+echo "files in path"
+search_dir="${JMETER_HOME}/lib"
+find "$search_dir" -type f
+echo "files in path completed"
 
 # Test Treesa Install Plugin Manager
 java -cp /opt/apache/apache-jmeter-${JMETER_VERSION}/lib/ext/jmeter-plugins-manager-${JMETER_PLUGIN_MANAGER_VERSION}.jar org.jmeterplugins.repository.PluginManagerCMDInstaller
